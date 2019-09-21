@@ -1,7 +1,7 @@
 import React from 'react';
 import Navigator from './components/navigator';
 import Header from './components/header';
-import BodySection from './components/bodysection';
+import BodySections from './components/bodysections';
 import Footer from './components/footer';
 
 function App() {
@@ -9,7 +9,7 @@ function App() {
     <div>
       <Navigator />
       <Header />
-      <BodySection />
+      <BodySections />
       <Footer />
     </div>
   

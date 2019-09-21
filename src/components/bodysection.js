@@ -1,90 +1,40 @@
 import React from "react";
+import PropTypes from "prop-types";
 
-const BodySection = () => {
+const BodySection = props => {
+  const imgClassName =
+    props.imageLeft === false ? "col-lg-6 order-lg-2" : "col-lg-6";
+  const contentClassName =
+    props.imageLeft === false ? "col-lg-6 order-lg-1" : "col-lg-6";
   return (
-    <div>
-      <section>
-        <div className="container">
-          <div className="row align-items-center">
-            <div className="col-lg-6 order-lg-2">
-              <div className="p-5">
-                <img
-                  className="img-fluid rounded-circle"
-                  src="img/01.jpg"
-                  alt=""
-                />
-              </div>
+    <section>
+      <div className="container">
+        <div className="row align-items-center">
+          <div className={imgClassName}>
+            <div className="p-5">
+              <img
+                className="img-fluid rounded-circle"
+                src={props.image}
+                alt=""
+              />
             </div>
-            <div className="col-lg-6 order-lg-1">
-              <div className="p-5">
-                <h2 className="display-4">For those about to rock...</h2>
-                <p>
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod
-                  aliquid, mollitia odio veniam sit iste esse assumenda amet
-                  aperiam exercitationem, ea animi blanditiis recusandae!
-                  Ratione voluptatum molestiae adipisci, beatae obcaecati.
-                </p>
-              </div>
+          </div>
+          <div className={contentClassName}>
+            <div className="p-5">
+              <h2 className="display-4">{props.title}</h2>
+              {props.children}
             </div>
           </div>
         </div>
-      </section>
-
-      <section>
-        <div className="container">
-          <div className="row align-items-center">
-            <div className="col-lg-6">
-              <div className="p-5">
-                <img
-                  className="img-fluid rounded-circle"
-                  src="img/02.jpg"
-                  alt=""
-                />
-              </div>
-            </div>
-            <div className="col-lg-6">
-              <div className="p-5">
-                <h2 className="display-4">We salute you!</h2>
-                <p>
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod
-                  aliquid, mollitia odio veniam sit iste esse assumenda amet
-                  aperiam exercitationem, ea animi blanditiis recusandae!
-                  Ratione voluptatum molestiae adipisci, beatae obcaecati.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section>
-        <div className="container">
-          <div className="row align-items-center">
-            <div className="col-lg-6 order-lg-2">
-              <div className="p-5">
-                <img
-                  className="img-fluid rounded-circle"
-                  src="img/03.jpg"
-                  alt=""
-                />
-              </div>
-            </div>
-            <div className="col-lg-6 order-lg-1">
-              <div className="p-5">
-                <h2 className="display-4">Let there be rock!</h2>
-                <p>
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod
-                  aliquid, mollitia odio veniam sit iste esse assumenda amet
-                  aperiam exercitationem, ea animi blanditiis recusandae!
-                  Ratione voluptatum molestiae adipisci, beatae obcaecati.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-    </div>
+      </div>
+    </section>
   );
+};
+
+BodySection.propTypes = {
+  image: PropTypes.string.isRequired,
+  title: PropTypes.string.isRequired,
+  imageLeft: PropTypes.bool.isRequired
 };
 
 export default BodySection;
