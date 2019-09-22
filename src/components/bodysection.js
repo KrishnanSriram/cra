@@ -2,6 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 
 const BodySection = props => {
+  console.log('Attempting to load image at', props.imageLeft);
   const imgClassName =
     props.imageLeft === false ? "col-lg-6 order-lg-2" : "col-lg-6";
   const contentClassName =

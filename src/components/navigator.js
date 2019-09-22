@@ -1,13 +1,14 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const Navigator = () => {
   return (
     <div>
       <nav className="navbar navbar-expand-lg navbar-dark navbar-custom fixed-top">
         <div className="container">
-          <a className="navbar-brand" href="#">
-            Start Bootstrap
-          </a>
+          <Link className="navbar-brand" to="/">
+            JUMPUP SMASH
+          </Link>
           <button
             className="navbar-toggler"
             type="button"
@@ -19,17 +20,23 @@ const Navigator = () => {
           >
             <span className="navbar-toggler-icon"></span>
           </button>
+
           <div className="collapse navbar-collapse" id="navbarResponsive">
             <ul className="navbar-nav ml-auto">
+            <li className="nav-item">
+            <Link className="nav-link" to="/teams_and_schedule">
+              Teams & Schedule
+            </Link>
+          </li>
               <li className="nav-item">
-                <a className="nav-link" href="#">
+                <Link className="nav-link" to="/register">
                   Sign Up
-                </a>
+                </Link>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="#">
-                  Log In
-                </a>
+                <Link className="nav-link" to="/login">
+                  Login
+                </Link>
               </li>
             </ul>
           </div>
